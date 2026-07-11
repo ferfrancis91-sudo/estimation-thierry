@@ -260,6 +260,41 @@
   @media (max-width:980px){ .hub-grid{grid-template-columns:1fr 1fr;} }
   @media (max-width:640px){ .hub-grid{grid-template-columns:1fr;} }
 
+  /* ===== ECOLES ===== */
+  .ecoles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-bottom:40px;}
+  .ecole-card{
+    background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;
+    display:flex;gap:16px;align-items:flex-start;box-shadow:0 10px 30px -22px rgba(11,31,90,.25);
+  }
+  .ecole-ic{
+    width:42px;height:42px;border-radius:11px;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;color:#fff;
+  }
+  .ecole-card h4{color:var(--iad-navy);font-size:.98rem;margin-bottom:4px;}
+  .ecole-card .type{font-size:.72rem;font-weight:700;color:var(--iad-blue);text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:6px;}
+  .ecole-card p{font-size:.85rem;color:var(--ink-soft);}
+  .ecoles-note{font-size:.8rem;color:var(--ink-soft);text-align:center;max-width:640px;margin:0 auto;line-height:1.6;}
+
+  /* ===== AGENDA ===== */
+  .agenda-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media (max-width:860px){ .agenda-grid{grid-template-columns:1fr;} }
+
+  /* ===== CARTE INTERACTIVE (Leaflet) ===== */
+  .carte-wrap{border-radius:20px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);}
+  .leaflet-map{height:460px;width:100%;background:var(--iad-tint-2);}
+  .carte-legend{
+    display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px;
+  }
+  .legend-chip{
+    display:flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;color:var(--iad-navy);
+    background:#fff;border:1px solid var(--line);border-radius:100px;padding:8px 16px;
+    cursor:pointer;user-select:none;transition:background .2s, opacity .2s;
+  }
+  .legend-chip:hover{background:var(--iad-tint-2);}
+  .legend-chip.off{opacity:.4;}
+  .legend-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;}
+  .carte-note{font-size:.78rem;color:var(--ink-soft);text-align:center;max-width:640px;margin:16px auto 0;line-height:1.6;}
+
   /* ===== HISTOIRE / CARTES ===== */
   .histoire-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center;}
   .histoire-carousel{
@@ -372,7 +407,7 @@
   }
   .cta-final::before{
     content:"";position:absolute;inset:0;
-    background-image:url('https://raw.githubusercontent.com/ferfrancis91-sudo/estimation-thierry/main/images-thierry/longpont-sur-orge.jpg');
+    background-image:url('https://raw.githubusercontent.com/ferfrancis91-sudo/estimation-thierry/main/images-thierry/longpont-sur-orge-2.jpg');
     background-size:cover;background-position:center;
     opacity:.3;filter:grayscale(.3);
     mask-image:radial-gradient(circle at 80% 20%, black 0%, transparent 75%);
@@ -448,6 +483,7 @@
   }
 
 </style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
 <body>
 
@@ -460,7 +496,8 @@
     <nav class="links">
       <a href="#simulateur">Estimation</a>
       <a href="#histoire">Histoire</a>
-      <a href="#secteurs">Secteurs</a>
+      <a href="#ecoles">Écoles</a>
+      <a href="#carte">Carte</a>
       <a href="#apropos">Thierry</a>
       <a href="#avis">Avis clients</a>
     </nav>
@@ -534,7 +571,7 @@
     <p>Le château et son parc au bord de l'étang donnent tout son cachet à cette commune prisée de la vallée de l'Orge.</p>
   </div>
   <div class="banner-slide" style="background-image:url('https://raw.githubusercontent.com/ferfrancis91-sudo/estimation-thierry/main/images-thierry/longpont-sur-orge.jpg');"></div>
-  <div class="banner-slide" style="background-image:url('https://raw.githubusercontent.com/ferfrancis91-sudo/estimation-thierry/main/images-thierry/longpont-sur-orge.jpg');"></div>
+  <div class="banner-slide" style="background-image:url('https://raw.githubusercontent.com/ferfrancis91-sudo/estimation-thierry/main/images-thierry/longpont-sur-orge-2.jpg');"></div>
 </section>
 
 <section id="pourquoi">
@@ -622,20 +659,20 @@
       <div class="hub-card">
         <div class="hub-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19V7l8-4 8 4v12M9 19v-6h6v6" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg></div>
         <h3>Écoles &amp; carte scolaire</h3>
-        <p>Les écoles à proximité de Longpont-sur-Orge. Pour la sectorisation exacte, vérifiez auprès de la mairie.</p>
-        <a href="https://www.google.com/maps/search/écoles+Longpont-sur-Orge" target="_blank" rel="noopener">Voir sur la carte →</a>
+        <p>Toutes les écoles et le collège de secteur de Longpont-sur-Orge, et comment connaître votre secteur.</p>
+        <a href="#ecoles">Consulter →</a>
       </div>
       <div class="hub-card">
         <div class="hub-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="white" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="white" stroke-width="2"/></svg></div>
         <h3>Agenda de la ville</h3>
-        <p>Actualités, marchés et vie associative de Longpont-sur-Orge.</p>
-        <a href="#actualites">Voir l'agenda →</a>
+        <p>Marchés, fêtes et événements municipaux de Longpont-sur-Orge.</p>
+        <a href="#agenda">Voir l'agenda →</a>
       </div>
       <div class="hub-card">
         <div class="hub-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" stroke="white" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="white" stroke-width="2"/></svg></div>
-        <h3>Carte de Longpont-sur-Orge</h3>
-        <p>Repérez-vous en un clic autour de votre futur bien.</p>
-        <a href="https://www.google.com/maps/place/Longpont-sur-Orge" target="_blank" rel="noopener">Ouvrir la carte →</a>
+        <h3>Carte interactive</h3>
+        <p>Écoles, lieux de culte, administrations et transports : repérez-vous en un clic.</p>
+        <a href="#carte">Explorer la carte →</a>
       </div>
     </div>
   </div>
@@ -651,7 +688,7 @@
       <div class="histoire-carousel">
         <img class="histoire-slide" src="https://raw.githubusercontent.com/ferfrancis91-sudo/estimation-thierry/main/images-thierry/longpont-sur-orge.jpg" alt="Longpont-sur-Orge, patrimoine local">
         <img class="histoire-slide" src="https://raw.githubusercontent.com/ferfrancis91-sudo/estimation-thierry/main/images-thierry/longpont-sur-orge-histoire.jpg" alt="Longpont-sur-Orge, vue historique">
-        <img class="histoire-slide" src="https://raw.githubusercontent.com/ferfrancis91-sudo/estimation-thierry/main/images-thierry/longpont-sur-orge.jpg" alt="Longpont-sur-Orge, vue du secteur">
+        <img class="histoire-slide" src="https://raw.githubusercontent.com/ferfrancis91-sudo/estimation-thierry/main/images-thierry/longpont-sur-orge-2.jpg" alt="Longpont-sur-Orge, vue du secteur">
       </div>
       <div class="histoire-text">
         <p class="typewriter">Longpont-sur-Orge doit son nom et une partie de son identité à son ancien prieuré, halte historique sur les chemins de pèlerinage, et à son château bordé par l'étang. Le site, encore visible aujourd'hui sur les vieilles cartes postales, reste l'un des plus marquants de la vallée de l'Orge.</p>
@@ -661,18 +698,64 @@
   </div>
 </section>
 
-<section id="actualites" style="background:var(--iad-tint-2);">
+<section id="ecoles">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Scolarité</span>
+      <h2>Écoles &amp; carte scolaire à Longpont-sur-Orge</h2>
+      <p>Un repère essentiel pour beaucoup de familles. Voici les établissements qui desservent Longpont-sur-Orge — pour la sectorisation exacte de votre adresse, vérifiez toujours auprès de la mairie.</p>
+    </div>
+    <div class="ecoles-grid stagger">
+      <div class="ecole-card">
+        <div class="ecole-ic" style="background:var(--iad-blue);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19V7l8-4 8 4v12M9 19v-6h6v6" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <div>
+          <span class="type">Élémentaire</span>
+          <h4>École élémentaire Les Echassons</h4>
+          <p>3 allée Erik Satie</p>
+        </div>
+      </div>
+      <div class="ecole-card">
+        <div class="ecole-ic" style="background:var(--iad-blue);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19V7l8-4 8 4v12M9 19v-6h6v6" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <div>
+          <span class="type">Maternelle</span>
+          <h4>École maternelle Les Echassons</h4>
+          <p>1 allée Erik Satie</p>
+        </div>
+      </div>
+      <div class="ecole-card">
+        <div class="ecole-ic" style="background:var(--iad-blue);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19V7l8-4 8 4v12M9 19v-6h6v6" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <div>
+          <span class="type">Maternelle</span>
+          <h4>École maternelle Lormoy</h4>
+          <p>35 rue de Lormoy</p>
+        </div>
+      </div>
+      <div class="ecole-card">
+        <div class="ecole-ic" style="background:var(--iad-blue);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19V7l8-4 8 4v12M9 19v-6h6v6" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <div>
+          <span class="type">Primaire</span>
+          <h4>École primaire Jean Ferrat</h4>
+          <p>Chemin de la Guayère</p>
+        </div>
+      </div>
+    </div>
+    <p class="ecoles-note">Informations données à titre indicatif et susceptibles d'évoluer d'une année sur l'autre. Thierry peut vous orienter vers les bonnes ressources selon votre adresse précise.</p>
+  </div>
+</section>
+
+<section id="agenda" style="background:var(--iad-tint-2);">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Vie locale</span>
-      <h2>Actualités &amp; événements à Longpont-sur-Orge</h2>
+      <h2>Agenda &amp; vie municipale à Longpont-sur-Orge</h2>
+      <p>Marchés, fêtes et événements municipaux : de quoi préparer sereinement votre installation.</p>
     </div>
-    <div class="actu-grid stagger">
+    <div class="agenda-grid stagger">
       <div class="actu-card">
-        <span class="eyebrow">Mairie</span>
-        <h4>Site officiel de la commune</h4>
-        <p>Retrouvez les actualités municipales, travaux, et vie associative directement sur le site de la mairie de Longpont-sur-Orge.</p>
-        <a href="https://www.google.com/search?q=mairie+de+Longpont-sur-Orge" target="_blank" rel="noopener">Consulter →</a>
+        <span class="eyebrow">Agenda officiel</span>
+        <h4>Site de la mairie de Longpont-sur-Orge</h4>
+        <p>Dates des marchés, fêtes de la ville, brocantes et événements municipaux : la mairie tient à jour l'agenda complet de la commune.</p>
+        <a href="https://www.google.com/search?q=agenda+mairie+de+Longpont-sur-Orge" target="_blank" rel="noopener">Consulter l'agenda →</a>
       </div>
       <div class="actu-card">
         <span class="eyebrow">Marché immobilier</span>
@@ -687,6 +770,26 @@
         <a href="#apropos">En discuter avec Thierry →</a>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="carte">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Repères pratiques</span>
+      <h2>Carte interactive de Longpont-sur-Orge</h2>
+      <p>Administration, écoles, lieux de culte et transports : repérez-vous en un clic autour de votre futur bien.</p>
+    </div>
+    <div class="carte-wrap reveal">
+      <div id="carte-leaflet" class="leaflet-map"></div>
+    </div>
+    <div class="carte-legend">
+      <span class="legend-chip" data-cat="administration"><span class="legend-dot" style="background:#0B5FFF;"></span>Administration</span>
+      <span class="legend-chip" data-cat="ecoles"><span class="legend-dot" style="background:#F2A93B;"></span>Écoles</span>
+      <span class="legend-chip" data-cat="culte"><span class="legend-dot" style="background:#7C5CFC;"></span>Lieux de culte</span>
+      <span class="legend-chip" data-cat="transports"><span class="legend-dot" style="background:#1FAE6A;"></span>Transports</span>
+    </div>
+    <p class="carte-note">Positions indicatives autour du centre de Longpont-sur-Orge. Cliquez sur un repère pour plus de détails, ou sur une catégorie ci-dessus pour l'afficher/la masquer.</p>
   </div>
 </section>
 
@@ -876,6 +979,7 @@
   </a>
 </div>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 
   const communeSelect = document.getElementById('commune');
@@ -1043,6 +1147,51 @@
       document.getElementById('successState').classList.add('active');
     });
   }
+
+  /* ===== Carte interactive (Leaflet / OpenStreetMap) ===== */
+  (function(){
+    var mapEl = document.getElementById('carte-leaflet');
+    if (!mapEl || typeof L === 'undefined') return;
+
+    var CENTER = [48.6333, 2.2833];
+    var COLORS = { administration:'#0B5FFF', ecoles:'#F2A93B', culte:'#7C5CFC', transports:'#1FAE6A' };
+    var MARKERS = [{"cat": "administration", "name": "Mairie de Longpont-sur-Orge", "addr": "Place des Combattants", "lat": 48.6333, "lng": 2.2833}, {"cat": "ecoles", "name": "École élémentaire Les Echassons", "addr": "3 allée Erik Satie", "lat": 48.631, "lng": 2.286}, {"cat": "ecoles", "name": "École maternelle Les Echassons", "addr": "1 allée Erik Satie", "lat": 48.6312, "lng": 2.2858}, {"cat": "ecoles", "name": "École maternelle Lormoy", "addr": "35 rue de Lormoy", "lat": 48.635, "lng": 2.281}, {"cat": "ecoles", "name": "École primaire Jean Ferrat", "addr": "Chemin de la Guayère", "lat": 48.636, "lng": 2.287}, {"cat": "culte", "name": "Église de Longpont-sur-Orge", "addr": "centre-ville, près de l'ancien prieuré", "lat": 48.633, "lng": 2.284}, {"cat": "transports", "name": "Gare RER C la plus proche", "addr": "secteur Saint-Michel-sur-Orge", "lat": 48.628, "lng": 2.295}];
+
+    var map = L.map('carte-leaflet', { scrollWheelZoom:false }).setView(CENTER, 14);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    function dotIcon(color){
+      return L.divIcon({
+        className:'',
+        html:'<div style="width:22px;height:22px;border-radius:50% 50% 50% 0;background:'+color+';transform:rotate(-45deg);border:2px solid #fff;box-shadow:0 3px 8px rgba(0,0,0,.35);"></div>',
+        iconSize:[22,22], iconAnchor:[11,22], popupAnchor:[0,-20]
+      });
+    }
+
+    var layersByCat = {};
+    MARKERS.forEach(function(m){
+      var marker = L.marker([m.lat, m.lng], { icon: dotIcon(COLORS[m.cat] || '#0B5FFF') })
+        .bindPopup('<strong>'+m.name+'</strong><br>'+(m.addr||''));
+      marker.addTo(map);
+      if (!layersByCat[m.cat]) layersByCat[m.cat] = [];
+      layersByCat[m.cat].push(marker);
+    });
+
+    document.querySelectorAll('.legend-chip').forEach(function(chip){
+      chip.addEventListener('click', function(){
+        var cat = chip.getAttribute('data-cat');
+        var list = layersByCat[cat] || [];
+        var hide = !chip.classList.contains('off');
+        chip.classList.toggle('off', hide);
+        list.forEach(function(marker){
+          if (hide) { map.removeLayer(marker); } else { marker.addTo(map); }
+        });
+      });
+    });
+  })();
 
 </script>
 
