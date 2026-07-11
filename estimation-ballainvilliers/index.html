@@ -243,10 +243,49 @@
   @media (prefers-reduced-motion: reduce){ .banner-slide{animation:none;opacity:.5;} }
   @media (max-width:640px){ .ville-mood{height:260px;} }
 
+  /* ===== HUB CARDS ===== */
+  .hub-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:48px;}
+  .hub-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 22px;transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .hub-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);}
+  .hub-ic{
+    width:48px;height:48px;border-radius:13px;background:var(--iad-blue);color:#fff;
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  }
+  .hub-card h3{font-size:1.02rem;color:var(--iad-navy);margin-bottom:8px;}
+  .hub-card p{font-size:.85rem;color:var(--ink-soft);margin-bottom:12px;}
+  .hub-card a{font-size:.82rem;font-weight:700;color:var(--iad-blue);}
+  @media (max-width:980px){ .hub-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:640px){ .hub-grid{grid-template-columns:1fr;} }
+
   /* ===== HISTOIRE / CARTES ===== */
   .histoire-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center;}
-  .histoire-grid img{border-radius:18px;box-shadow:var(--shadow);width:100%;height:auto;}
+  .histoire-carousel{
+    position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);
+    aspect-ratio:4/3;background:var(--iad-navy);
+  }
+  .histoire-slide{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    opacity:0;animation:histoireFade 12s infinite;
+  }
+  .histoire-slide:nth-child(2){animation-delay:4s;}
+  .histoire-slide:nth-child(3){animation-delay:8s;}
+  @keyframes histoireFade{
+    0%{opacity:0;} 3%{opacity:1;} 30%{opacity:1;} 34%{opacity:0;} 100%{opacity:0;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .histoire-slide{animation:none;opacity:0;}
+    .histoire-slide:first-child{opacity:1;}
+  }
   .histoire-text p{color:var(--ink-soft);font-size:.95rem;margin-bottom:14px;}
+  .histoire-text p.typewriter{min-height:1.6em;}
+  .typewriter-cursor::after{
+    content:"▍"; display:inline-block; color:var(--iad-blue);
+    animation:caretBlink 0.9s steps(1) infinite;
+  }
+  @keyframes caretBlink{ 50%{opacity:0;} }
   .map-embed{border-radius:18px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);}
   .map-embed iframe{width:100%;height:380px;border:0;display:block;}
   .map-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px;}
@@ -421,7 +460,6 @@
     <nav class="links">
       <a href="#simulateur">Estimation</a>
       <a href="#histoire">Histoire</a>
-      <a href="#cartes">Cartes</a>
       <a href="#secteurs">Secteurs</a>
       <a href="#apropos">Thierry</a>
       <a href="#avis">Avis clients</a>
@@ -434,8 +472,8 @@
   <div class="hero-watermark"></div>
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow reveal in-view">Conseiller iad · Essonne (91)</span>
-      <h1 class="reveal in-view">Votre bien mérite une <span>estimation juste</span>, faite par un expert local.</h1>
+      <span class="eyebrow reveal in-view">Estimation immobilière · Ballainvilliers</span>
+      <h1 class="reveal in-view">Votre bien à Ballainvilliers mérite une <span>estimation juste</span>, faite par un expert local.</h1>
       <p class="lead reveal in-view">Thierry Mariette, conseiller iad indépendant basé à Chilly-Mazarin, vous accompagne à Ballainvilliers avec la force du 1er réseau immobilier de France et une connaissance fine de votre secteur.</p>
       <div class="hero-cta reveal in-view">
         <a href="#simulateur" class="btn">Estimer gratuitement</a>
@@ -567,6 +605,42 @@
   </div>
 </section>
 
+<section id="hub">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Bien plus qu'un site d'estimation</span>
+      <h2>Tout savoir sur la vie à Ballainvilliers</h2>
+      <p>Histoire, écoles, agenda et carte des repères utiles : de quoi préparer sereinement votre achat, votre vente ou votre installation.</p>
+    </div>
+    <div class="hub-grid stagger">
+      <div class="hub-card">
+        <div class="hub-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="white" stroke-width="2.2" stroke-linecap="round"/></svg></div>
+        <h3>Histoire &amp; qualité de vie</h3>
+        <p>Le patrimoine et le caractère de Ballainvilliers, racontés simplement.</p>
+        <a href="#histoire">Découvrir →</a>
+      </div>
+      <div class="hub-card">
+        <div class="hub-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19V7l8-4 8 4v12M9 19v-6h6v6" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>Écoles &amp; carte scolaire</h3>
+        <p>Les écoles à proximité de Ballainvilliers. Pour la sectorisation exacte, vérifiez auprès de la mairie.</p>
+        <a href="https://www.google.com/maps/search/écoles+Ballainvilliers" target="_blank" rel="noopener">Voir sur la carte →</a>
+      </div>
+      <div class="hub-card">
+        <div class="hub-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="white" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="white" stroke-width="2"/></svg></div>
+        <h3>Agenda de la ville</h3>
+        <p>Actualités, marchés et vie associative de Ballainvilliers.</p>
+        <a href="#actualites">Voir l'agenda →</a>
+      </div>
+      <div class="hub-card">
+        <div class="hub-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" stroke="white" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="white" stroke-width="2"/></svg></div>
+        <h3>Carte de Ballainvilliers</h3>
+        <p>Repérez-vous en un clic autour de votre futur bien.</p>
+        <a href="https://www.google.com/maps/place/Ballainvilliers" target="_blank" rel="noopener">Ouvrir la carte →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="histoire" style="background:var(--iad-tint-2);">
   <div class="wrap">
     <div class="section-head reveal">
@@ -574,35 +648,14 @@
       <h2>L'histoire de Ballainvilliers</h2>
     </div>
     <div class="histoire-grid reveal">
-      <img src="https://raw.githubusercontent.com/ferfrancis91-sudo/estimation-thierry/main/images-thierry/ballainvilliers-histoire.jpg" alt="Ballainvilliers, patrimoine local">
+      <div class="histoire-carousel">
+        <img class="histoire-slide" src="https://raw.githubusercontent.com/ferfrancis91-sudo/estimation-thierry/main/images-thierry/ballainvilliers.jpg" alt="Ballainvilliers, patrimoine local">
+        <img class="histoire-slide" src="https://raw.githubusercontent.com/ferfrancis91-sudo/estimation-thierry/main/images-thierry/ballainvilliers-histoire.jpg" alt="Ballainvilliers, vue historique">
+        <img class="histoire-slide" src="https://raw.githubusercontent.com/ferfrancis91-sudo/estimation-thierry/main/images-thierry/ballainvilliers-eglise.jpg" alt="Ballainvilliers, vue du secteur">
+      </div>
       <div class="histoire-text">
-        <p>Petit village agricole devenu résidentiel, Ballainvilliers a conservé son caractère paisible autour de son église et du château de Villebouzin, témoin de plusieurs siècles d'histoire locale. Les vieilles cartes postales de la commune montrent un bourg qui a su préserver son charme tout en se développant.</p>
+        <p class="typewriter">Petit village agricole devenu résidentiel, Ballainvilliers a conservé son caractère paisible autour de son église et du château de Villebouzin, témoin de plusieurs siècles d'histoire locale. Les vieilles cartes postales de la commune montrent un bourg qui a su préserver son charme tout en se développant.</p>
         <p>Connaître l'histoire et le caractère d'une commune aide à mieux comprendre son marché immobilier : c'est aussi pour cela que Thierry prend le temps d'échanger avec vous sur votre quartier avant toute estimation.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="cartes">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Repères pratiques</span>
-      <h2>Carte du secteur &amp; carte scolaire</h2>
-      <p>Deux cartes interactives pour situer votre bien et les écoles à proximité.</p>
-    </div>
-    <div class="map-grid stagger">
-      <div class="map-card">
-        <h3>Carte de Ballainvilliers</h3>
-        <div class="map-embed">
-          <iframe src="https://www.google.com/maps?q=Ballainvilliers%2C+Essonne&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-      <div class="map-card">
-        <h3>Écoles à proximité</h3>
-        <div class="map-embed">
-          <iframe src="https://www.google.com/maps?q=écoles+Ballainvilliers&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <p class="map-note">Carte indicative — pour la sectorisation scolaire exacte de votre adresse, vérifiez toujours auprès de la mairie de Ballainvilliers, seule autorité compétente.</p>
       </div>
     </div>
   </div>
@@ -706,18 +759,18 @@
     <div class="testi-grid stagger">
       <div class="testi">
         <div class="stars">★★★★★</div>
-        <p>« [Avis client à ajouter — remplacez ce texte par un retour réel de l'un de vos clients] »</p>
-        <div class="who"><div class="avatar">—</div><div><strong>À compléter</strong><span>par Thierry</span></div></div>
+        <p>« Je recommande vivement Monsieur Mariette pour la qualité de son accompagnement. Il a su se montrer disponible, réactif et a été un intermédiaire particulièrement fiable entre toutes les parties pour faire avancer le dossier. »</p>
+        <div class="who"><div class="avatar">MHD</div><div><strong>MHD</strong><span>Achat immobilier · avis Immodvisor</span></div></div>
       </div>
       <div class="testi">
         <div class="stars">★★★★★</div>
-        <p>« [Avis client à ajouter — remplacez ce texte par un retour réel de l'un de vos clients] »</p>
-        <div class="who"><div class="avatar">—</div><div><strong>À compléter</strong><span>par Thierry</span></div></div>
+        <p>« Très pros, réactive, souriant et disponible tout : juste rentrée de vacances et descendu de l'avion et déjà au boulot. »</p>
+        <div class="who"><div class="avatar">C</div><div><strong>Chryss</strong><span>Mise en vente · avis Immodvisor</span></div></div>
       </div>
       <div class="testi">
         <div class="stars">★★★★★</div>
-        <p>« [Avis client à ajouter — remplacez ce texte par un retour réel de l'un de vos clients] »</p>
-        <div class="who"><div class="avatar">—</div><div><strong>À compléter</strong><span>par Thierry</span></div></div>
+        <p>« Thierry est un agent disponible, à l'écoute et aux petits soins. Il a été de bons conseils pour mon projet immobilier et tout s'est déroulé facilement. Je le recommande vivement. »</p>
+        <div class="who"><div class="avatar">S</div><div><strong>Sylvain C.</strong><span>Achat immobilier · avis Immodvisor</span></div></div>
       </div>
     </div>
   </div>
@@ -853,9 +906,11 @@
       resultLabel.textContent = "Estimation indicative";
       return;
     }
-    const total = Math.round(prix * surface);
-    resultat.textContent = total.toLocaleString('fr-FR') + " €";
-    resultLabel.textContent = "Estimation indicative";
+    const base = prix * surface;
+    const low = Math.round((base * 0.9) / 1000) * 1000;
+    const high = Math.round((base * 1.1) / 1000) * 1000;
+    resultat.textContent = low.toLocaleString('fr-FR') + " – " + high.toLocaleString('fr-FR') + " €";
+    resultLabel.textContent = "Fourchette indicative (± 10%)";
   }
   communeSelect.addEventListener('change', updateEstimate);
   surfaceInput.addEventListener('input', updateEstimate);
@@ -912,6 +967,40 @@
     }, {threshold:.5});
     counters.forEach(c=>counterIo.observe(c));
   }
+
+  /* ===== Effet machine à écrire pour le texte d'histoire ===== */
+  (function(){
+    var els = document.querySelectorAll('.typewriter');
+    if (!els.length) return;
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    els.forEach(function(el){
+      var fullText = el.textContent;
+      if (reduceMotion || !('IntersectionObserver' in window)) { return; }
+      el.textContent = '';
+      el.classList.add('typewriter-cursor');
+      var started = false;
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting && !started) {
+            started = true;
+            var i = 0;
+            function type(){
+              el.textContent = fullText.slice(0, i);
+              i++;
+              if (i <= fullText.length) {
+                setTimeout(type, 12);
+              } else {
+                el.classList.remove('typewriter-cursor');
+              }
+            }
+            type();
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.35 });
+      obs.observe(el);
+    });
+  })();
 
   /* ===== Envoi du formulaire vers votre Google Apps Script =====
      Remplacez REMPLACER_PAR_URL_APPS_SCRIPT_DE_THIERRY par l'URL obtenue
