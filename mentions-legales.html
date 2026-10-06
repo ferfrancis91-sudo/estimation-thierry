@@ -3,86 +3,311 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mentions légales | Estimation Ballainvilliers - Thierry Mariette, mandataire iad</title>
-<meta name="robots" content="noindex">
+<title>Mentions légales & confidentialité – Thierry Mariette, Conseiller iad</title>
+<meta name="description" content="Mentions légales et politique de confidentialité du site de Thierry Mariette, conseiller iad.">
+
+<meta property="og:title" content="Mentions légales &amp; confidentialité – Thierry Mariette, Conseiller iad">
+<meta property="og:description" content="Mentions légales et politique de confidentialité du site de Thierry Mariette, conseiller iad.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --iad-blue:#0B5FFF; --iad-navy:#071B42; --ink:#0B1220; --ink-soft:#4A5568;
-    --line:#E1E9F7; --tint:#F5F9FF;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:'Inter',sans-serif;color:var(--ink);line-height:1.65;background:#fff;}
-  .wrap{max-width:780px;margin:0 auto;padding:60px 24px 100px;}
-  h1,h2{font-family:'Sora',sans-serif;color:var(--iad-navy);}
-  h1{font-size:28px;margin-bottom:8px;}
-  .back{display:inline-block;margin-bottom:28px;font-size:13.5px;color:var(--iad-blue);font-weight:600;}
-  h2{font-size:18px;margin-top:36px;margin-bottom:10px;}
-  p{font-size:14.5px;color:var(--ink-soft);margin-bottom:10px;}
-  a{color:var(--iad-blue);}
-  .fill{background:var(--tint);border:1px dashed var(--line);padding:2px 6px;border-radius:4px;color:var(--iad-navy);font-size:.92em;}
-  footer{border-top:1px solid var(--line);margin-top:50px;padding-top:24px;font-size:12.5px;color:#94A3B8;}
+:root{
+  color-scheme: light;
+  --iad-blue:#0B5FFF;--iad-blue-2:#2E7BFF;--iad-cyan:#4FC3E8;--iad-navy:#071B42;--iad-navy-2:#0D2A5C;
+  --iad-tint:#EAF2FF;--iad-tint-2:#F5F9FF;--gold:#F2A93B;--gold-2:#F7C978;--ink:#0B1220;--ink-soft:#4A5568;
+  --paper:#FFFFFF;--line:#E1E9F7;--radius:18px;--shadow:0 20px 50px -20px rgba(11,31,90,.35);
+  --wa:#1FAF5A;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.15;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--iad-blue)}
+section{padding:84px 0}
+.sec-head{max-width:680px;margin-bottom:40px}
+.sec-head h2{font-size:clamp(1.6rem,3.4vw,2.3rem);margin:10px 0 12px;color:var(--iad-navy)}
+.sec-head p{color:var(--ink-soft);font-size:1.05rem}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:1rem;padding:15px 24px;border-radius:999px;transition:transform .2s,box-shadow .2s,background .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:var(--iad-navy);box-shadow:0 12px 30px -12px rgba(242,169,59,.8)}
+.btn-gold:hover{background:var(--gold-2)}
+.btn-ghost{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn-ghost:hover{background:rgba(255,255,255,.18)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-outline{border:1.5px solid var(--iad-blue);color:var(--iad-blue)}
+.btn-outline:hover{background:var(--iad-tint)}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{height:30px}
+.brand b{font-family:'Sora';font-size:1.02rem;color:var(--iad-navy);display:block;line-height:1.1}
+.brand span{font-size:.75rem;color:var(--ink-soft)}
+nav.main{display:flex;gap:24px;font-size:.92rem;font-weight:600;color:var(--ink-soft);white-space:nowrap}
+nav.main a:hover{color:var(--iad-blue)}
+.hd .btn{padding:10px 18px;font-size:.9rem}
+@media(max-width:1000px){nav.main{display:none}}
+@media(max-width:420px){.hd .btn .t{display:none}}
+
+/* hero */
+.hero{position:relative;background:var(--iad-navy);color:#fff;padding:0;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.22;filter:saturate(.8)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,var(--iad-navy) 22%,rgba(7,27,66,.5) 60%,rgba(7,27,66,.25) 100%)}
+.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .85fr;gap:48px;align-items:end;padding-top:72px}
+.hero-txt{padding-bottom:72px}
+.hero .eyebrow{color:var(--iad-cyan)}
+.hero h1{font-size:clamp(2.1rem,5vw,3.5rem);margin:14px 0 20px;font-weight:800}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p.lead{font-size:1.15rem;color:#D6E2F7;max-width:560px;margin-bottom:30px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.9rem;color:#B9CAE6}
+.hero-meta span::before{content:"✓ ";color:var(--iad-cyan);font-weight:700}
+.hero-photo{position:relative;align-self:end}
+.hero-photo img{display:block;width:100%;max-width:420px;margin-left:auto;aspect-ratio:622/770;object-fit:cover;object-position:top;border-radius:220px 220px 0 0;background:#fff}
+.hero-tag{position:absolute;left:0;bottom:40px;background:#fff;color:var(--iad-navy);padding:14px 18px;border-radius:14px;box-shadow:var(--shadow);font-size:.85rem;line-height:1.35}
+.hero-tag b{font-family:'Sora';display:block;font-size:.98rem}
+@media(max-width:860px){
+  .hero-in{grid-template-columns:1fr;gap:0;padding-top:48px}
+  .hero-txt{padding-bottom:36px}
+  .hero-photo img{max-width:300px;margin:0 auto}
+  .hero-tag{left:50%;transform:translateX(-50%);bottom:18px;white-space:nowrap}
+}
+
+/* market strip */
+.market{background:var(--iad-tint-2);padding:44px 0;border-bottom:1px solid var(--line)}
+.market-in{display:grid;grid-template-columns:1fr 2.4fr;gap:32px;align-items:center}
+.market h2{font-size:1.35rem;color:var(--iad-navy);margin-top:6px}
+.mk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.mk{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.mk small{display:block;font-size:.75rem;color:var(--ink-soft);font-weight:600}
+.mk b{font-family:'Sora';font-size:1.05rem;color:var(--iad-blue)}
+.mk-note{grid-column:1/-1;font-size:.78rem;color:var(--ink-soft);margin-top:4px}
+@media(max-width:860px){.market-in{grid-template-columns:1fr}.mk-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* situations */
+.sit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sit{border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:#fff;display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s}
+.sit:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.sit .ico{width:48px;height:48px;border-radius:12px;background:var(--iad-tint);display:grid;place-items:center;font-size:1.4rem;margin-bottom:18px}
+.sit h3{font-size:1.15rem;color:var(--iad-navy);margin-bottom:8px}
+.sit p{color:var(--ink-soft);font-size:.96rem;flex:1;margin-bottom:18px}
+.sit a{font-weight:700;color:var(--iad-blue)}
+@media(max-width:860px){.sit-grid{grid-template-columns:1fr}}
+
+/* steps */
+.steps{background:var(--iad-navy);color:#fff}
+.steps .sec-head h2{color:#fff}.steps .sec-head p{color:#B9CAE6}.steps .eyebrow{color:var(--iad-cyan)}
+.st-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+.st{background:var(--iad-navy-2);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:26px}
+.st::before{counter-increment:s;content:"0" counter(s);font-family:'Sora';font-weight:800;font-size:1.6rem;color:var(--gold);display:block;margin-bottom:12px}
+.st h3{font-size:1.05rem;margin-bottom:8px}
+.st p{font-size:.92rem;color:#B9CAE6}
+@media(max-width:860px){.st-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.st-grid{grid-template-columns:1fr}}
+
+/* story */
+.story-in{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.story-img{position:relative}
+.story-img img{width:100%;border-radius:var(--radius);display:block;aspect-ratio:4/5;object-fit:cover;object-position:top}
+.story-img .stamp{position:absolute;right:-14px;bottom:24px;background:var(--gold);color:var(--iad-navy);font-family:'Sora';font-weight:800;padding:14px 18px;border-radius:14px;box-shadow:var(--shadow);text-align:center;line-height:1.1}
+.story-img .stamp small{display:block;font-family:'Inter';font-weight:600;font-size:.72rem}
+.story blockquote{font-family:'Sora';font-size:clamp(1.25rem,2.4vw,1.6rem);color:var(--iad-navy);line-height:1.35;margin:14px 0 22px;font-weight:600}
+.story p{color:var(--ink-soft);margin-bottom:14px}
+.tl{display:flex;gap:28px;flex-wrap:wrap;margin-top:24px;padding-top:22px;border-top:1px solid var(--line)}
+.tl div b{font-family:'Sora';font-size:1.5rem;color:var(--iad-blue);display:block}
+.tl div span{font-size:.85rem;color:var(--ink-soft)}
+@media(max-width:860px){.story-in{grid-template-columns:1fr;gap:36px}.story-img{max-width:380px}.story-img .stamp{right:10px}}
+
+/* avis */
+.avis{background:var(--iad-tint-2)}
+.av-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.av{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;min-height:170px}
+.av .stars{color:var(--gold);letter-spacing:2px;margin-bottom:10px}
+.av p{color:var(--ink-soft);font-style:italic}
+.av small{display:block;margin-top:14px;font-weight:700;font-size:.82rem;color:var(--iad-navy)}
+.todo{display:inline-block;background:#FFF4E0;color:#9A5B00;font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:6px;margin-bottom:10px;font-style:normal}
+.av-cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+@media(max-width:860px){.av-grid{grid-template-columns:1fr}}
+
+/* faq */
+.faq-in{display:grid;grid-template-columns:.9fr 1.4fr;gap:56px}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;list-style:none;font-family:'Sora';font-weight:600;font-size:1.06rem;color:var(--iad-navy);display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;color:var(--iad-blue);line-height:1;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--ink-soft);margin-top:12px}
+@media(max-width:860px){.faq-in{grid-template-columns:1fr;gap:10px}}
+
+/* cafe */
+.cafe{padding:0 0 84px}
+.cafe-box{background:linear-gradient(120deg,var(--iad-blue),var(--iad-navy-2));color:#fff;border-radius:28px;padding:56px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center;position:relative;overflow:hidden}
+.cafe-box::before{content:"☕";position:absolute;right:-20px;top:-40px;font-size:12rem;opacity:.08}
+.cafe-box h2{font-size:clamp(1.6rem,3.4vw,2.3rem);margin-bottom:12px}
+.cafe-box p{color:#D6E2F7}
+.cafe-ctas{display:flex;flex-direction:column;gap:12px;align-items:stretch}
+.cafe-ctas .btn{justify-content:center}
+@media(max-width:860px){.cafe-box{grid-template-columns:1fr;padding:36px 24px}}
+
+/* recrut */
+.recrut{padding:0 0 70px}
+.recrut-box{border:1px solid var(--line);border-radius:var(--radius);padding:26px 30px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.recrut-box b{font-family:'Sora';color:var(--iad-navy)}
+.recrut-box span{color:var(--ink-soft);font-size:.95rem;display:block}
+
+/* footer */
+footer{background:var(--iad-navy);color:#B9CAE6;padding:56px 0 30px;font-size:.9rem}
+.ft{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:36px}
+footer h4{font-family:'Sora';color:#fff;margin-bottom:12px;font-size:.95rem}
+footer li{list-style:none;margin-bottom:6px}
+footer a:hover{color:#fff}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-size:.8rem}
+@media(max-width:860px){.ft{grid-template-columns:1fr}}
+
+/* sticky mobile */
+.mob-bar{display:none}
+@media(max-width:860px){
+  .mob-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:10px 12px;gap:10px;box-shadow:0 -8px 24px -12px rgba(0,0,0,.2)}
+  .mob-bar a{flex:1;justify-content:center;padding:12px 10px;font-size:.92rem}
+  body{padding-bottom:72px}
+}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* photos : diaporama Ken Burns */
+.kb{position:absolute;inset:0;overflow:hidden}
+.kb div{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;animation:kb 30s infinite}
+.kb div:nth-child(2){animation-delay:6s}.kb div:nth-child(3){animation-delay:12s}.kb div:nth-child(4){animation-delay:18s}.kb div:nth-child(5){animation-delay:24s}
+@keyframes kb{0%{opacity:0;transform:scale(1)}4%{opacity:.42}20%{opacity:.42}26%{opacity:0;transform:scale(1.12)}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.kb div{animation:none}.kb div:first-child{opacity:.4}}
+.sit .ph{margin:-28px -28px 20px;height:170px;border-radius:var(--radius) var(--radius) 0 0;background-size:cover;background-position:center;position:relative;overflow:hidden}
+.sit .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(7,27,66,.35))}
+.sit .ico{margin-top:-46px;position:relative;z-index:2;background:#fff;box-shadow:0 8px 20px -8px rgba(11,31,90,.4)}
+.sit{overflow:hidden}
+.qx{padding:84px 0;background:var(--iad-tint-2)}
+.qx-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-auto-rows:220px;gap:14px}
+.qx-grid a{position:relative;border-radius:var(--radius);overflow:hidden;display:block;color:#fff}
+.qx-grid a:first-child{grid-row:span 2}
+.qx-grid .im{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s ease}
+.qx-grid a:hover .im{transform:scale(1.08)}
+.qx-grid a::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(7,27,66,.85))}
+.qx-grid .lb{position:absolute;left:18px;right:18px;bottom:16px;z-index:2}
+.qx-grid .lb b{font-family:'Sora';font-size:1.2rem;display:block}
+.qx-grid .lb span{font-size:.86rem;color:#D6E2F7}
+@media(max-width:860px){.qx-grid{grid-template-columns:1fr 1fr;grid-auto-rows:170px}.qx-grid a:first-child{grid-column:span 2;grid-row:span 1}}
+.g-photos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+.g-photos figure{margin:0}
+.g-photos div{aspect-ratio:1;border-radius:12px;background-size:cover;background-position:center}
+.g-photos figcaption{font-size:.78rem;color:var(--ink-soft);margin-top:6px;text-align:center;font-weight:600}
+@media(max-width:560px){.g-photos{grid-template-columns:repeat(2,1fr)}}
+
+.cookie-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:100;max-width:640px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:20px 22px;display:none}
+.cookie-banner.show{display:block}
+.cookie-banner p{font-size:.82rem;color:var(--ink-soft);margin-bottom:14px}
+.cookie-banner a{color:var(--iad-blue);font-weight:600}
+.cookie-actions{display:flex;gap:10px;flex-wrap:wrap}
+.cookie-actions button{font-family:'Inter',sans-serif;font-weight:700;font-size:.82rem;padding:10px 18px;border-radius:100px;border:none;cursor:pointer}
+#cookieAccept{background:var(--iad-navy);color:#fff}
+#cookieDecline{background:var(--iad-tint-2);color:var(--iad-navy);border:1px solid var(--line)}
+@media(max-width:860px){.cookie-banner{bottom:84px}}
+
+.mk-grid.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:860px){.mk-grid.g3{grid-template-columns:repeat(2,1fr)}}
+</style><style>
+.ml{padding:56px 0 90px}.ml .wrap{max-width:860px}
+.ml h1{font-size:clamp(1.8rem,4vw,2.6rem);color:var(--iad-navy);margin:10px 0 8px}
+.ml h2{font-size:1.3rem;color:var(--iad-navy);margin:40px 0 12px}
+.ml p,.ml li{color:#2D3748;margin-bottom:12px}.ml ul{padding-left:20px}
+.price-tbl{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:.95rem}
+.price-tbl th,.price-tbl td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.price-tbl th{background:var(--iad-tint);color:var(--iad-navy);font-family:'Sora';font-size:.85rem}
+
 </style>
 </head>
 <body>
-<div class="wrap">
-  <a href="index.html" class="back">← Retour au site</a>
-  <h1>Mentions légales</h1>
-  <p>Site édité par Thierry Mariette, mandataire immobilier indépendant du réseau iad France.</p>
 
-  <h2>Éditeur du site</h2>
-  <p>
-    Ce site est édité par Thierry Mariette, mandataire immobilier indépendant (agent commercial),
-    immatriculé au Registre Spécial des Agents Commerciaux (R.S.A.C.) sous le n° 480 641 646
-    R.S.A.C. Évry.
-  </p>
-  <p>
-    Statut : agent commercial exerçant sous mandat pour le compte de la société iad France<br>
-    Carte professionnelle : non détenue — activité exercée sans maniement de fonds, conformément
-    à l'article L.4 de la loi n°70-9 du 2 janvier 1970 (loi Hoguet)<br>
-    Contact : <a href="mailto:thierry.mariette@iadfrance.fr">thierry.mariette@iadfrance.fr</a> — Tél. 06 73 05 77 82<br>
-    Secteur d'activité : Ballainvilliers, Chilly-Mazarin et communes voisines (Essonne)
-  </p>
+<header>
+  <div class="wrap hd">
+    <a href="index.html" class="brand"><img src="data:image/png;base64,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" alt="iad"><div><b>Thierry Mariette</b><span>Conseiller iad · Linas & Montlhéry</span></div></a>
+    <nav class="main">
+      <a href="index.html">Accueil</a>
+      <a href="estimation.html" style="color:var(--iad-blue)">Estimer mon bien</a>
+    </nav>
+    <a class="btn btn-gold" href="tel:0673057782">📞 <span class="t">06 73 05 77 82</span></a>
+  </div>
+</header>
 
-  <h2>Réseau mandant</h2>
-  <p>
-    Thierry Mariette exerce en tant qu'agent commercial du réseau iad France (société NosRezo),
-    dont les informations légales complètes (SIREN, RCS, siège social, garantie financière,
-    assurance responsabilité civile professionnelle) sont disponibles sur le site officiel :
-    <a href="https://www.iadfrance.fr" target="_blank" rel="noopener">iadfrance.fr</a>.
-  </p>
+<main class="ml"><div class="wrap">
+  <span class="eyebrow">Informations légales</span>
+  <h1>Mentions légales & politique de confidentialité</h1>
+  <p style="color:var(--ink-soft)">Dernière mise à jour : octobre 2026</p>
 
-  <h2>Hébergement</h2>
-  <p>
-    Ce site est hébergé par GitHub, Inc.<br>
-    88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis<br>
-    <a href="https://github.com" target="_blank" rel="noopener">github.com</a>
-  </p>
+  <h2>1. Éditeur du site</h2>
+  <table class="price-tbl"><tr><th style="width:38%">Nom et prénom</th><td>Thierry Mariette</td></tr><tr><th style="width:38%">Statut</th><td>Entrepreneur individuel — Agent commercial indépendant</td></tr><tr><th style="width:38%">Immatriculation RSAC</th><td>480 641 646 — R.S.A.C. d'Évry</td></tr><tr><th style="width:38%">Téléphone</th><td>06 73 05 77 82</td></tr><tr><th style="width:38%">E-mail</th><td>thierry.mariette@iadfrance.fr</td></tr><tr><th style="width:38%">Directeur de la publication</th><td>Thierry Mariette</td></tr></table>
+  <p>Thierry Mariette exerce son activité d'agent commercial en immobilier, à titre indépendant et sans lien de subordination, au nom et pour le compte de la société I@D France SAS, dont il ne détient pas la carte professionnelle en propre :</p>
+  <table class="price-tbl"><tr><th style="width:38%">Société mandante</th><td>I@D France SAS, au capital de 100 000 €</td></tr><tr><th style="width:38%">Siège social</th><td>1 allée de la Ferme de Varâtre, Immeuble Carré Haussmann III, 77127 Lieusaint</td></tr><tr><th style="width:38%">RCS</th><td>Melun 503 676 421</td></tr><tr><th style="width:38%">Carte professionnelle</th><td>Transaction sur immeubles et fonds de commerce n° CPI 7702 2018 000 028 002, délivrée par la CCI de Seine-et-Marne</td></tr><tr><th style="width:38%">Garantie financière</th><td>CEGC — 59 avenue Pierre Mendès-France, 75013 Paris (sans manipulation de fonds)</td></tr></table>
+  <p>Conformément à l'article L.111-6 du Code de la consommation et à l'arrêté du 26 janvier 2022, le barème d'honoraires applicable est disponible sur simple demande auprès de Thierry Mariette, aux coordonnées ci-dessus.</p>
 
-  <h2 id="confidentialite">Collecte et usage des données personnelles (RGPD)</h2>
-  <p>
-    Les informations recueillies via le formulaire d'estimation (nom, coordonnées, adresse du bien)
-    sont utilisées exclusivement pour vous recontacter dans le cadre de votre demande d'estimation,
-    par Thierry Mariette ou, le cas échéant, par un professionnel partenaire qualifié du réseau iad.
-    Elles ne sont jamais revendues à des fins publicitaires à des tiers non liés à votre projet.
-  </p>
-  <p>
-    Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi
-    « Informatique et Libertés », vous disposez d'un droit d'accès, de rectification, de
-    limitation et de suppression de vos données. Pour l'exercer, contactez
-    thierry.mariette@iadfrance.fr.
-  </p>
-  <p>Durée de conservation : le temps nécessaire au traitement de votre demande, puis archivage limité conformément aux obligations légales.</p>
+  <h2>2. Hébergement</h2>
+  <p>Ce site est hébergé par GitHub, Inc. (service GitHub Pages) — 88 Colin P. Kelly Jr Street, San Francisco, CA 94107, États-Unis.</p>
 
-  <h2>Cookies</h2>
-  <p>Ce site utilise Google Ads (balise de conversion) pour mesurer l'efficacité des campagnes publicitaires. Aucune donnée personnelle identifiable n'est partagée à cette fin au-delà des standards de la plateforme.</p>
+  <h2>3. Propriété intellectuelle</h2>
+  <p>La marque, le logo « iad » et la charte graphique du réseau sont la propriété exclusive d'I@D France. Leur reproduction sur ce site est faite dans le cadre de l'usage autorisé aux conseillers du réseau pour la promotion de leur activité. Les textes et visuels propres à ce site sont la propriété de Thierry Mariette ou utilisés avec les autorisations nécessaires. Toute reproduction est soumise à autorisation préalable.</p>
 
-  <h2>Propriété intellectuelle</h2>
-  <p>L'ensemble des contenus présents sur ce site (textes, images, structure, mise en page) est la propriété de son éditeur ou de ses partenaires, sauf mention contraire. Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation préalable, est interdite.</p>
+  <h2>4. Données personnelles (RGPD)</h2>
+  <p>Thierry Mariette traite les données personnelles que vous transmettez via les formulaires d'estimation et de contact, ou lorsque vous le contactez par WhatsApp, téléphone ou e-mail. Ce traitement est réalisé conjointement avec I@D France, en qualité de responsables conjoints de traitement, conformément à la loi « Informatique et Libertés » et au Règlement (UE) 2016/679 (RGPD).</p>
+  <ul>
+    <li><b>Données collectées :</b> nom, prénom, téléphone, e-mail (facultatif), commune, adresse et caractéristiques du bien, projet et message que vous choisissez de partager.</li>
+    <li><b>Finalité :</b> répondre à votre demande d'estimation ou de contact. Base légale : votre consentement.</li>
+    <li><b>Destinataires :</b> Thierry Mariette et, le cas échéant, les services internes d'I@D France dans le cadre du suivi de votre demande. Vos données ne sont jamais vendues ni cédées à des fins publicitaires.</li>
+    <li><b>Durée de conservation :</b> 3 ans à compter de la collecte ou du dernier contact.</li>
+  </ul>
+  <p>Vous disposez d'un droit d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité. Pour l'exercer, écrivez à <a href="mailto:thierry.mariette@iadfrance.fr" style="color:var(--iad-blue)">thierry.mariette@iadfrance.fr</a> ou au délégué à la protection des données d'I@D France : <a href="mailto:privacy@iadgroup.fr" style="color:var(--iad-blue)">privacy@iadgroup.fr</a>. En l'absence de réponse satisfaisante, vous pouvez saisir la CNIL (<a href="https://www.cnil.fr" style="color:var(--iad-blue)">www.cnil.fr</a>).</p>
 
-  <footer>Thierry Mariette — Mandataire iad France · Secteur Ballainvilliers &amp; sud Essonne</footer>
+  <h2>5. Cookies</h2>
+  <p>Ce site ne dépose aucun cookie publicitaire, de mesure d'audience ou de traçage. Seul un stockage local mémorise votre choix concernant le bandeau d'information. Ce stockage strictement nécessaire ne requiert pas de consentement préalable.</p>
+
+  <h2>6. Médiation de la consommation</h2>
+  <p>Conformément à l'article L.616-1 du Code de la consommation, en cas de litige non résolu directement avec Thierry Mariette, vous pouvez recourir gratuitement au service de médiation dont dépend I@D France. Les coordonnées du médiateur sont disponibles sur iadfrance.fr.</p>
+
+  <h2>7. Limitation de responsabilité</h2>
+  <p>Les prix au m² et informations présentés sur ce site sont donnés à titre indicatif. Une estimation à distance ne remplace pas l'analyse du bien sur place. Seule une visite permet d'établir un prix précis.</p>
+</div></main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-bottom" style="border:none;padding:0">© 2026 Thierry Mariette · Conseiller iad indépendant · <a href="index.html">Accueil</a> · <a href="mentions-legales.html">Mentions légales & confidentialité</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){var els=document.querySelectorAll('.reveal');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{threshold:.12});els.forEach(function(e){io.observe(e)});})();
+</script>
+<div class="cookie-banner" id="cookieBanner">
+  <p>Ce site utilise uniquement des cookies strictement nécessaires à son fonctionnement. Aucun cookie publicitaire ou de mesure d'audience n'est déposé. Voir nos <a href="mentions-legales.html">mentions légales</a>.</p>
+  <div class="cookie-actions">
+    <button id="cookieAccept">J'ai compris</button>
+    <button id="cookieDecline">Continuer</button>
+  </div>
 </div>
+<script>
+(function(){
+var b=document.getElementById('cookieBanner');
+try{ if(!localStorage.getItem('cookieConsent')) b.classList.add('show'); }catch(e){ b.classList.add('show'); }
+function set(v){ try{localStorage.setItem('cookieConsent',v);}catch(e){} b.classList.remove('show'); }
+document.getElementById('cookieAccept').onclick=function(){set('accepted')};
+document.getElementById('cookieDecline').onclick=function(){set('declined')};
+})();
+</script>
 </body>
 </html>
